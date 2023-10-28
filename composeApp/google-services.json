@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1082698301426",
+    "project_id": "kmp-simple-app",
+    "storage_bucket": "kmp-simple-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1082698301426:android:07bedc66615f71dbf5356b",
+        "android_client_info": {
+          "package_name": "org.company.app.androidApp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQhjo3WddC9rV4wjT-Q5VokH1CuXo1WR8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

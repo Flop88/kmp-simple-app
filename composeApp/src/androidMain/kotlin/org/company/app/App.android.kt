@@ -6,6 +6,10 @@ import android.net.Uri
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import dev.gitlive.firebase.Firebase
+import dev.gitlive.firebase.initialize
+import org.company.app.di.getSharedModules
+import org.koin.core.context.startKoin
 
 class AndroidApp : Application() {
     companion object {
@@ -14,6 +18,7 @@ class AndroidApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        startKoin { modules(getSharedModules()) }
         INSTANCE = this
     }
 }
@@ -21,6 +26,9 @@ class AndroidApp : Application() {
 class AppActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        Firebase.initialize(this)
+
         setContent {
             App()
         }

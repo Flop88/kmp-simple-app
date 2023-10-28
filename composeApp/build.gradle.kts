@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.libres)
     alias(libs.plugins.buildConfig)
     alias(libs.plugins.kotlinx.serialization)
+    alias(libs.plugins.google.gms)
 }
 
 @OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
@@ -45,15 +46,35 @@ kotlin {
                 implementation(compose.material3)
                 implementation(compose.materialIconsExtended)
                 implementation(libs.libres)
-                implementation(libs.voyager.navigator)
                 implementation(libs.composeImageLoader)
                 implementation(libs.napier)
                 implementation(libs.kotlinx.coroutines.core)
-                implementation(libs.moko.mvvm)
                 implementation(libs.ktor.core)
+                implementation(libs.composeIcons.featherIcons)
                 implementation(libs.kotlinx.serialization.json)
-                implementation(libs.kotlinx.datetime)
+
+                // Voyager
+                implementation(libs.voyager.navigator)
+                implementation(libs.voyager.tab.navigator)
+                implementation(libs.voyager.transitions)
+//                implementation(libs.voyager.bottom.sheet)
+
+                // Koin
                 implementation(libs.koin.core)
+                implementation(libs.koin.compose)
+
+                // ViewModel
+                implementation(libs.mvvm.compose)
+                implementation(libs.mvvm.flow.compose)
+                implementation(libs.mvvm.livedata.compose)
+
+                // Firebase
+                implementation(libs.firebase.common)
+                implementation(libs.firebase.firestore)
+                implementation(libs.firebase.auth)
+
+                // Date
+                implementation(libs.kotlinx.datetime)
             }
         }
 
@@ -70,6 +91,7 @@ kotlin {
                 implementation(libs.compose.uitooling)
                 implementation(libs.kotlinx.coroutines.android)
                 implementation(libs.ktor.client.okhttp)
+                implementation(platform("com.google.firebase:firebase-bom:30.0.1"))
             }
         }
 
